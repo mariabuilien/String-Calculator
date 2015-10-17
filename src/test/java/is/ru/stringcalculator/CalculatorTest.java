@@ -64,4 +64,26 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("//[;;][%]\n1;;2%3"));
     }
 
+     @Test
+    public void testNegativesNotAllowed(){
+    	try{
+    		Calculator.add("-1,2,3");
+    	}
+    	catch(RuntimeException ex){
+    		assertEquals("Negatives not allowed: -1", ex.getMessage());
+
+    	}
+    }
+
+    @Test
+    public void testMulitpleNegativesNotAllowed(){
+    	try{
+    		Calculator.add("-1,-2,3");
+    	}
+    	catch(RuntimeException ex){
+    		assertEquals("Negatives not allowed: -1,-2", ex.getMessage());
+
+    	}
+    }
+
 }
