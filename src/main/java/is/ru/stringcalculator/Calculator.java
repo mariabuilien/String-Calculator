@@ -16,7 +16,26 @@ public class Calculator {
 
 	private static String[] splitNumbers(String numbers){
 		String del = ",|\n";
-	    return numbers.split(del);
+		if(numbers.startsWith("//")){
+			numbers = numbers.substring(2);
+			if(numbers.startsWith("[")){
+				while(numbers.startsWith("[")){
+					String del2 = findDel(numbers);
+					del = del + "|" + del2;
+					int n = numbers.indexOf("]");
+					numbers = numbers.substring(n + 1);
+				}
+				return numbers.split(del);
+
+			}
+			else{
+				String del2 = findDel(numbers);
+				del = del + "|" + del2;
+				numbers = numbers.substring(1);
+				return numbers.split(del);
+			}
+		}
+		return numbers.split(del);
 	}
 	
     private static int sum(String[] numbers){
@@ -25,6 +44,20 @@ public class Calculator {
 		    total += toInt(number);
 		}
 		return total;
+    }
+
+    private static String findDel(String numbers){
+    	if(numbers.startsWith("[")){
+    		int n = numbers.indexOf("]");
+    		String del = numbers.substring(1,n);
+    		return del;
+    	}
+    	else{
+    		char dels = numbers.charAt(0);
+    		String del = Character.toString(dels);
+    		
+    		return del;
+    	}
     } 
 
 }

@@ -49,4 +49,19 @@ public class CalculatorTest {
     	assertEquals(13, Calculator.add("1\n2,3\n3,4"));
     }
 
+        @Test
+    public void testNewDel(){
+    	assertEquals(3, Calculator.add("//;1;2"));
+    }
+
+    @Test
+    public void testNewDelMult(){
+    	assertEquals(3, Calculator.add("//[;;]1;;2"));
+    }
+
+     @Test
+    public void testNewDelMultMore(){
+    	assertEquals(6, Calculator.add("//[;;][%]1;;2%3"));
+    }
+
 }
