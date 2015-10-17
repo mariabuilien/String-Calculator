@@ -6,9 +6,8 @@ public class Calculator {
 		if(text == ""){
 			return 0;
 		}
-        String[] numb = splitNumbers(text);
-        int sums = sum(numb);
-        return sums;
+		String[] numb = splitNumbers(text);
+        return sum(numb);
 	}
 
 	private static int toInt(String number){
@@ -16,8 +15,10 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers){
-	    return numbers.split(",");
+		String del = ",|\n";
+	    return numbers.split(del);
 	}
+	
     private static int sum(String[] numbers){
  	    int total = 0;
         for(String number : numbers){
@@ -25,4 +26,5 @@ public class Calculator {
 		}
 		return total;
     } 
+
 }
