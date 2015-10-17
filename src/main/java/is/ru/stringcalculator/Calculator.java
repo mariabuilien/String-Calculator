@@ -48,7 +48,9 @@ public class Calculator {
         	if(numb < 0){
         		negatives = negatives + "," + numb;
         	}
-		    total += numb;
+        	if(numb < 1001){
+        		total += numb;
+        	}
 		}
         NegativesNotAllowed(negatives);
         

@@ -86,4 +86,18 @@ public class CalculatorTest {
     	}
     }
 
+   @Test
+    public void testIgnoreLargerThanThousand(){
+    	assertEquals(3, Calculator.add("//[;;][%]\n1;;2%1001"));
+    }
+
+     @Test
+    public void testIgnoreLargerThanThousand2(){
+    	assertEquals(2, Calculator.add("1001,2"));
+    }
+
+     @Test
+    public void testIgnoreLargerThanThousand3(){
+    	assertEquals(0, Calculator.add("1020,1032"));
+    }
 }
