@@ -49,7 +49,7 @@ public class CalculatorTest {
     	assertEquals(13, Calculator.add("1\n2,3\n3,4"));
     }
 
-        @Test
+    @Test
     public void testNewDel(){
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
@@ -116,6 +116,9 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("//[***][%%]\n1***2%%3"));
     }
 
-
+    @Test
+    public void testAdditionally(){
+    	assertEquals(6, Calculator.add("//;\n1;2,3"));
+    }
 
 }
