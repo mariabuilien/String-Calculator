@@ -6,11 +6,21 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
-		else if(text.contains(",")){
-			return sum(splitNumbers(text));
+		else{
+			int calc = 0;
+
+        	String[] numb = splitNumbers(text);
+        	if(numb.length > 2){
+        		return 0;
+        	}
+        	for(int i = 0; i < numb.length; i++){
+    			int value = 0;
+    			value = toInt(numb[i]);
+    			calc = calc + value;
+        		
+       		 }
+			return calc;
 		}
-		else
-			return 1;
 	}
 
 	private static int toInt(String number){
