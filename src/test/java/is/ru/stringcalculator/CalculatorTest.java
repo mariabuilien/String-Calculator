@@ -51,17 +51,17 @@ public class CalculatorTest {
 
         @Test
     public void testNewDel(){
-    	assertEquals(3, Calculator.add("//;1;2"));
+    	assertEquals(3, Calculator.add("//;\n1;2"));
     }
 
     @Test
     public void testNewDelMult(){
-    	assertEquals(3, Calculator.add("//[;;]1;;2"));
+    	assertEquals(3, Calculator.add("//[;;]\n1;;2"));
     }
 
      @Test
     public void testNewDelMultMore(){
-    	assertEquals(6, Calculator.add("//[;;][%]1;;2%3"));
+    	assertEquals(6, Calculator.add("//[;;][%]\n1;;2%3"));
     }
 
 }

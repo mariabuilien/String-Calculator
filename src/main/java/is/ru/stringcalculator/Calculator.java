@@ -25,13 +25,15 @@ public class Calculator {
 					int n = numbers.indexOf("]");
 					numbers = numbers.substring(n + 1);
 				}
+				numbers = numbers.substring(1);
 				return numbers.split(del);
 
 			}
 			else{
 				String del2 = findDel(numbers);
 				del = del + "|" + del2;
-				numbers = numbers.substring(1);
+				numbers = numbers.substring(2);
+
 				return numbers.split(del);
 			}
 		}
