@@ -106,9 +106,14 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("//[***]\n1***2***3"));
     }
 
-      @Test
+    @Test
     public void testMultipleDelimeters(){
     	assertEquals(6, Calculator.add("//[*][%]\n1*2%3"));
+    }
+
+    @Test
+    public void testMultipleLongDelimeters(){
+    	assertEquals(6, Calculator.add("//[***][%%]\n1***2%%3"));
     }
 
 

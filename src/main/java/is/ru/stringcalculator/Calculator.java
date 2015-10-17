@@ -20,26 +20,26 @@ public class Calculator {
 			numbers = numbers.substring(2);
 			if(numbers.startsWith("[")){
 				while(numbers.startsWith("[")){
-					String del2 = findDel(numbers);
-					numbers = numbers.replace(del2, ",");
-					int n = numbers.indexOf("]");
-					numbers = numbers.substring(n + 1);
+					numbers = trimString(numbers);
 				}
 				numbers = numbers.substring(1);
-				return numbers.split(del);
-
 			}
 			else{
 				String del2 = findDel(numbers);
 				del = del + "|" + del2;
 				numbers = numbers.substring(2);
-
-				return numbers.split(del);
 			}
 		}
 		return numbers.split(del);
 	}
 	
+	private static String trimString(String numbers){
+		String del = findDel(numbers);
+		numbers = numbers.replace(del, ",");
+		int n = numbers.indexOf("]");
+		return numbers.substring(n + 1); 
+	}
+
     private static int sum(String[] numbers){
  	    int total = 0;
  	    String negatives = "";
@@ -53,7 +53,6 @@ public class Calculator {
         	}
 		}
         NegativesNotAllowed(negatives);
-        
 		return total;
     }
 
