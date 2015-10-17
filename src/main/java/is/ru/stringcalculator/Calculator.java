@@ -21,7 +21,7 @@ public class Calculator {
 			if(numbers.startsWith("[")){
 				while(numbers.startsWith("[")){
 					String del2 = findDel(numbers);
-					del = del + "|" + del2;
+					numbers = numbers.replace(del2, ",");
 					int n = numbers.indexOf("]");
 					numbers = numbers.substring(n + 1);
 				}

@@ -100,4 +100,11 @@ public class CalculatorTest {
     public void testIgnoreLargerThanThousand3(){
     	assertEquals(0, Calculator.add("1020,1032"));
     }
+
+     @Test
+    public void testLongDelimeters(){
+    	assertEquals(6, Calculator.add("//[***]\n1***2***3"));
+    }
+
+
 }
