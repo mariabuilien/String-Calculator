@@ -26,8 +26,8 @@ public class Calculator {
 			}
 			else{
 				String del2 = findDel(numbers);
-				del = del + "|" + del2;
 				numbers = numbers.substring(2);
+				numbers = numbers.replace(del2, ",");
 			}
 		}
 		return numbers.split(del);
@@ -57,16 +57,16 @@ public class Calculator {
     }
 
     private static String findDel(String numbers){
+    	String del = "";
     	if(numbers.startsWith("[")){
     		int n = numbers.indexOf("]");
-    		String del = numbers.substring(1,n);
-    		return del;
+    		del = numbers.substring(1,n);
     	}
     	else{
     		char dels = numbers.charAt(0);
-    		String del = Character.toString(dels); 		
-    		return del;
+    		del = Character.toString(dels); 		
     	}
+    	return del;
     } 
 
     private static void NegativesNotAllowed(String negatives){

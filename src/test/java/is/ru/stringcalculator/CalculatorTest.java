@@ -55,6 +55,11 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testNewDel2(){
+        assertEquals(3, Calculator.add("//*\n1*2"));
+    }
+
+    @Test
     public void testNewDelMult(){
     	assertEquals(3, Calculator.add("//[;;]\n1;;2"));
     }
